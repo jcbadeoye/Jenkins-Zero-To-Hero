@@ -15,15 +15,17 @@ Install Jenkins, configure Docker as agent, set up cicd, deploy applications to 
 ## AWS EC2 Instance
 
 - Go to AWS Console
-- Instances(running)
+- Instances(running) Name it Jenkins 
 - Launch instances
 
 <img width="994" alt="Screenshot 2023-02-01 at 12 37 45 PM" src="https://user-images.githubusercontent.com/43399466/215974891-196abfe9-ace0-407b-abd2-adcffe218e3f.png">
+### now install Jenkins on the above ec2 instance 
+1. navigate to the ec2 instance > select it > then copy the Public IP aDDRESS > GO TO GIT BASH > ssh to the instance (ssh -i /Users/path/.pem ubuntu@public ip address of the ec2 instance
 
 ### Install Jenkins.
 
 Pre-Requisites:
- - Java (JDK)
+ - Java (JDK) - Jenkins is a JAVA Base platform 
 
 ### Run the below commands to install Java and Jenkins
 
@@ -91,8 +93,14 @@ Create First Admin User or Skip the step [If you want to use this Jenkins instan
 Jenkins Installation is Successful. You can now starting using the Jenkins 
 
 <img width="990" alt="Screenshot 2023-02-01 at 11 14 13 AM" src="https://user-images.githubusercontent.com/43399466/215961440-3f13f82b-61a2-4117-88bc-0da265a67fa7.png">
+### HOW JENKINS ARCHITECTURE ####
 
-## Install the Docker Pipeline plugin in Jenkins:
+The installed Jenkins on EC2 IS the JENKINS MASTER -this is used for scheduling purpose 
+Jenkins Worker NODE1 Node2 Node3 but this is old approach 
+#### New Approach ### 
+Jenkins Master is install with Docker agent and the Jenkins pipeline will be run on docker container and different container can be used c1 c2 c3 c4 c5 reason for this container is lightweight and it can be used and destroy that is why is good compare to old approach 
+
+## Install the Docker Pipeline plugin in Jenkins: (install docker on the same Machine(EC2)where you have your Jenkins )
 
    - Log in to Jenkins.
    - Go to Manage Jenkins > Manage Plugins.
