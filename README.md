@@ -139,6 +139,8 @@ http://<ec2-instance-public-ip>:8080/restart
 
 The docker agent configuration is now successful.
 
+Now everything is done we can now write our first pipeline (if you are new on your jenkins click new item - you will see several ways to create pipeline you will see pipeline, multi-configuration project, multibranch piopeline etc so in all PIPELINE is what we are using as is declarative aproach) so go to the repostory start with "my-first-pipeline"
+
 Thanks by Jacob 
 
 
